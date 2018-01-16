@@ -61,32 +61,39 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
+          <?php if (!isset($_POST["matricula"])) ?>
           <form method="post">
             <div class="form-group">
-              <label for="Titulo">Titulo: </label>
-              <input type="text" class="form-control" name="Titulo" placeholder="Introduce Titulo">
+              <label for="Nombre">Nombre: </label>
+              <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre">
             </div>
             <div class="form-group">
-              <label for="Subtitulo">Subtitulo: </label>
-              <input type="text" class="form-control" name="Subtitulo" placeholder="Introduce Subtitulo">
-            </div>
-            <div class="form-group">
-              <label for="Cuerpo">Cuerpo: </label>
-              <input type="text" class="form-control" name="Cuerpo" placeholder="Introduce Cuerpo">
-            </div>
-            <div class="form-group">
-              <label for="Imagen">Imagen: </label>
-              <input type="text" class="form-control" name="Imagen" placeholder="Introduce ruta de imagen">
+              <label for="Descripcion">Descripción: </label>
+              <input type="text" class="form-control" name="Descripcion" placeholder="Introduce Descripción">
             </div>
             <div class="form-group">
               <label for="Fecha">Fecha: </label>
               <input type="date" class="form-control" name="Fecha" placeholder="Introduce Fecha">
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-default" name="Enviar" value="Publicar">
+              <label for="Material">Material: </label>
+              <input type="text" class="form-control" name="Material" placeholder="Introduce Material">
             </div>
-
+            <div class="form-group">
+              <label for="nombre">Autor: </label>
+              <input type="text" class="form-control" name="Autor" placeholder="Introduce Autor">
+            </div>
+            <div class="form-group">
+              <label for="Imagen">Imagen: </label>
+              <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de Imagen">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
+            </div>
           </form>
+
+
+
 
         </div>
         <div class="col-md-3" id="banners">
