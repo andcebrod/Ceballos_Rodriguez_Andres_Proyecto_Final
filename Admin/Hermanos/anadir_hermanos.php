@@ -56,7 +56,7 @@
       </div>
       <div class="row" id="menu">
         <div class="col-md-3" id="selmenu">
-          <span>Inicio</span>
+          <span><a href="../../template.php">Inicio</a></span>
         </div>
         <div class="col-md-3" id="selmenu">
           <span>Eventos</span>

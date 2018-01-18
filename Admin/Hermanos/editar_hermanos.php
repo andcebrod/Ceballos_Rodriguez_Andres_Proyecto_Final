@@ -7,7 +7,18 @@
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
 
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
     <div class="container">
 
       <div class="row" class="header">
@@ -43,7 +54,7 @@
       </div>
       <div class="row" id="menu">
         <div class="col-md-3" id="selmenu">
-          <span>Inicio</span>
+          <span><<a href="../../template.php">Inicio</a></span>
         </div>
         <div class="col-md-3" id="selmenu">
           <span>Eventos</span>
@@ -61,6 +72,36 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
+
+
+          <?php
+
+
+        $query2 ="SELECT * FROM Hermanos";
+
+        if ($result = $connection->query($query2)) {
+          echo "<table class='table table-striped'>";
+          while($obj = $result->fetch_object()) {
+            echo "<tr>";
+            echo "<td>".$obj->Nombre."</td>";
+            echo "<td>".$obj->Apellidos."</td>";
+            echo "<td>".$obj->DNI."</td>";
+            echo "<td>".$obj->FechaNacimiento."</td>";
+            echo "<td>".$obj->Direccion."</td>";
+            echo "<td>".$obj->Ciudad."</td>";
+            echo "<td>".$obj->Provincia."</td>";
+            echo "<td>".$obj->Correo."</td>";
+            echo "<td><a href='hermano_editado.php'><img src='../Images/lapiz.png' height='22px' width='22px'></a></td>";
+            echo "</tr>";
+            }
+            echo "</table>";
+          }
+
+
+
+
+
+           ?>
 
         </div>
         <div class="col-md-3" id="banners">

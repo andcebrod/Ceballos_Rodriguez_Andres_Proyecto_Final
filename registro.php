@@ -2,11 +2,23 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
+
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
 
     <div class="container">
 
@@ -43,7 +55,7 @@
       </div>
       <div class="row" id="menu">
         <div class="col-md-3" id="selmenu">
-          <span>Inicio</span>
+          <span><a href="template.php">Inicio</a></span>
         </div>
         <div class="col-md-3" id="selmenu">
           <span>Eventos</span>
@@ -61,24 +73,25 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
+          <h2>Registro de Usuario: </h2>
 
                   <?php if (!isset($_POST["DNI"])) :?>
-
+                    <form method="post">
                       <div class="form-group">
                         <label for="Correo">Correo Electrónico: </label>
                         <input type="email" class="form-control" name="Correo" placeholder="Introduce Correo">
                       </div>
                       <div class="form-group">
+                        <label for="Correo">Nombre de Usuario: </label>
+                        <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre de Usuario">
+                      </div>
+                      <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" placeholder="Enter password" name="pass">
+                        <input type="password" class="form-control" placeholder="Enter password" name="Pass">
                       </div>
                       <div class="form-group">
                         <label for="DNI">DNI: </label>
                         <input type="text" class="form-control" name="DNI" placeholder="Introduce DNI">
-                      </div>
-                      <div class="form-group">
-                        <label for="Rol">Rol: </label>
-                        <input type="text" class="form-control" name="Rol" placeholder="Introduce Rol">
                       </div>
                       <div class="form-group">
                         <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
@@ -87,48 +100,38 @@
 
                     <?php else: ?>
 
-                      <?php
+                    <?php
 
-                      $Correo = $_POST[""];
-                      $Pasword = $_POST[""];
-                      $DNI = $_POST[""];
-                      $query = "INSERT INTO Usuarios ()
-                      VALUES ()";
+                    $Correo = $_POST["Correo"];
+                    $Password = $_POST["Pass"];
+                    $DNI = $_POST["DNI"];
+                    $Nombre = $_POST["Nombre"];
 
-                      if ($connection->query($query)) {
+                    $query="Select DNI,CodHermano from Hermanos where DNI='".$DNI."'";
 
-                        echo "HERMANO INSERTADO";
+                    echo $query;
 
-                        $query2 ="SELECT * FROM Hermanos";
+                      if ($result=$connection->query($query)) {
 
-                        if ($result = $connection->query($query2)) {
-                          echo "<table class='table table-striped'>";
+                        $obj = $result->fetch_object();
 
-                          //FETCHING OBJECTS FROM THE RESULT SET
-                          //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
-                          while($obj = $result->fetch_object()) {
-                              //PRINTING EACH ROW
-                              echo "<tr>";
-                                echo "<td>".$obj->Nombre."</td>";
-                                echo "<td>".$obj->Apellidos."</td>";
-                                echo "<td>".$obj->DNI."</td>";
-                                echo "<td>".$obj->FechaNacimiento."</td>";
-                                echo "<td>".$obj->Direccion."</td>";
-                                echo "<td>".$obj->Ciudad."</td>";
-                                echo "<td>".$obj->Provincia."</td>";
-                                echo "<td>".$obj->Correo."</td>";
-                              echo "</tr>";
-                          }
-                          echo "</table>";
+                        $CodHermano = $obj->CodHermano;
+
+                        $query2 = "INSERT INTO Usuarios (Correo, Pass, DNI, Rol, Nombre, CodHermano)
+                        VALUES ('$Correo',md5('$Password'),'$DNI','User','$Nombre', $CodHermano )";
+
+                        echo $query2;
+
+                        if ($connection->query($query2)) {
+
+                          echo "Ha sido Registrado en el Sistema";
+                        }  else {
+                          echo "Error al registrar";
                         }
-
-                       else {
-                        echo "ERROR AL INSERTAR HERMANO";
                       }
-                    }
 
-                       ?>
-                     <?php endif ?>
+                    ?>
+                    <?php endif ?>
 
 
 

@@ -55,8 +55,6 @@
           <span>Bienes</span>
         </div>
 
-
-
       </div>
 
       <div class="row" class="contenido">
@@ -72,7 +70,6 @@
               <tr>
                 <td><span>Usuarios </span></td>
                 <td>
-                  <a href="Usuarios/anadir_usuarios.php"><img src="Images/plus.png" height="22px" width="22px"></a>
                   <a href="Usuarios/editar_usuarios.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
                   <a href="Usuarios/eliminar_usuarios.php"><img src="Images/delete.png" height="22px" width="22px"></a>
                 </td>

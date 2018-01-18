@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
@@ -43,7 +43,7 @@
       </div>
       <div class="row" id="menu">
         <div class="col-md-3" id="selmenu">
-          <span><a href="../../template.php">Inicio</a></span>
+          <span>Inicio</span>
         </div>
         <div class="col-md-3" id="selmenu">
           <span>Eventos</span>
@@ -60,38 +60,67 @@
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9"  id="contprincipal">
-          <?php if (!isset($_POST["matricula"])) ?>
-          <form method="post">
-            <div class="form-group">
-              <label for="Nombre">Nombre: </label>
-              <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre">
-            </div>
-            <div class="form-group">
-              <label for="Descripcion">Descripción: </label>
-              <input type="text" class="form-control" name="Descripcion" placeholder="Introduce Descripción">
-            </div>
-            <div class="form-group">
-              <label for="Fecha">Fecha: </label>
-              <input type="date" class="form-control" name="Fecha" placeholder="Introduce Fecha">
-            </div>
-            <div class="form-group">
-              <label for="Material">Material: </label>
-              <input type="text" class="form-control" name="Material" placeholder="Introduce Material">
-            </div>
-            <div class="form-group">
-              <label for="nombre">Autor: </label>
-              <input type="text" class="form-control" name="Autor" placeholder="Introduce Autor">
-            </div>
-            <div class="form-group">
-              <label for="Imagen">Imagen: </label>
-              <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de Imagen">
-            </div>
-            <div class="form-group">
-              <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
-            </div>
-          </form>
+        <div class="col-md-9" id="contprincipal">
 
+          <?php if (!isset($_POST["DNI"])) :?>
+
+            <form method="post">
+              <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre">
+              </div>
+              <div class="form-group">
+                <label for="Apellidos">Apellidos: </label>
+                <input type="text" class="form-control" name="Apellidos" placeholder="Introduce Apellidos">
+              </div>
+              <div class="form-group">
+                <label for="DNI">DNI: </label>
+                <input type="text" class="form-control" name="DNI" placeholder="Introduce DNI">
+              </div>
+              <div class="form-group">
+                <label for="FechaNacimiento">Fecha de Nacimiento: </label>
+                <input type="date" class="form-control" name="FechaNacimiento">
+              </div>
+              <div class="form-group">
+                <label for="Direccion">Direccion: </label>
+                <input type="text" class="form-control" name="Direccion" placeholder="Introduce Direccion">
+              </div>
+              <div class="form-group">
+                <label for="Ciudad">Ciudad: </label>
+                <input type="text" class="form-control" name="Ciudad" placeholder="Introduce Ciudad">
+              </div>
+              <div class="form-group">
+                <label for="Provincia">Provincia: </label>
+                <input type="text" class="form-control" name="Provincia" placeholder="Introduce Provincia">
+              </div>
+              <div class="form-group">
+                <label for="Correo">Correo Electrónico: </label>
+                <input type="email" class="form-control" name="Correo" placeholder="Introduce Correo">
+              </div>
+              <div class="form-group">
+                <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
+              </div>
+            </form>
+
+            <?php else: ?>
+
+              <?php
+
+              $Nombre = $_POST["Nombre"];
+              $Apellidos = $_POST["Apellidos"];
+              $DNI = $_POST["DNI"];
+              $FechaNacimiento = $_POST["FechaNacimiento"];
+              $Direccion =  $_POST["Direccion"];
+              $Ciudad =  $_POST["Ciudad"];
+              $Provincia = $_POST["Provincia"];
+              $Correo = $_POST ["Correo"];
+
+              
+
+               ?>
+
+
+            <?php endif ?>
 
 
 
