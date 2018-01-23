@@ -7,7 +7,18 @@
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
 
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
     <div class="container">
 
       <div class="row" class="header">
@@ -42,17 +53,23 @@
         </div>
       </div>
       <div class="row" id="menu">
-        <div class="col-md-3" id="selmenu">
-          <span><a href="../../template.php">Inicio</a></span>
+        <div class="col-md-2" id="selmenu">
+          <span><a href="index.php">Inicio</a></span>
         </div>
-        <div class="col-md-3" id="selmenu">
-          <span>Eventos</span>
+        <div class="col-md-2" id="selmenu">
+          <span><a href="eventos.php">Eventos</a></span>
         </div>
-        <div class="col-md-3" id="selmenu">
-          <span>Articulos</span>
+        <div class="col-md-2" id="selmenu">
+          <span><a href="articulos.php">Articulos</a></span>
         </div>
-        <div class="col-md-3" id="selmenu">
-          <span>Bienes</span>
+        <div class="col-md-2" id="selmenu">
+          <span><a href="bienes.php">Bienes</a></span>
+        </div>
+        <div class="col-md-2" id="selmenu">
+          <span><a href="registro.php">Registro</a></span>
+        </div>
+        <div class="col-md-2" id="selmenu">
+          <span><a href="usuarios.php">Área de Usuarios</a></span>
         </div>
 
 
@@ -61,7 +78,7 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
-          <?php if (!isset($_POST["matricula"])) ?>
+          <?php if (!isset($_POST["Nombre"])) ?>
           <form method="post">
             <div class="form-group">
               <label for="Nombre">Nombre: </label>
@@ -91,6 +108,30 @@
               <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
             </div>
           </form>
+          <?php else: ?>
+
+            <?php
+
+            $Nombre = $_POST["Nombre"];
+            $Descripcion = $_POST["Descripcion"];
+            $Fecha = $_POST["Fecha"]:
+            $Material = $_POST["Material"];
+            $Autor = $_POST["Autor"];
+            $Imagen = $_POST["Imagen"];
+
+            $query = "INSERT INTO Bienes (Nombre, Descripcion, Fecha, Material, Autor, Imagen)
+            VALUES ('$Nombre','$Descripcion','$Fecha','$Material',$Autor, '$Imagen' )";
+
+            if ($result=$connection->query($query)) {
+                echo "Ha sido subido";
+              }  else {
+                echo "Error al subir";
+              }
+
+
+             ?>
+
+           <?php endif ?>
 
 
 
