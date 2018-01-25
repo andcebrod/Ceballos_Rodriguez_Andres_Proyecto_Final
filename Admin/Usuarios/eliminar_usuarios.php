@@ -7,7 +7,18 @@
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
 
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
     <div class="container">
 
       <div class="row" class="header">
@@ -66,6 +77,36 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
+
+          <?php
+        $query ="SELECT * FROM Usuarios";
+
+        if ($result = $connection->query($query)) {
+
+          echo "<table class='table table-striped'>";
+          while($obj = $result->fetch_object()) {
+
+            $DNI = $obj->DNI;
+
+            echo "<tr>";
+            echo "<td>".$obj->Nombre."</td>";
+            echo "<td>".$obj->Correo."</td>";
+            echo "<td><a href='usuario_eliminado.php?DNI=".$DNI."'>
+            <img src='../Images/delete.png' height='22px' width='22px'></a></td>";
+            echo "</tr>";
+            }
+            echo "</table>";
+          }
+
+
+
+
+
+
+           ?>
+
+
+
 
         </div>
         <div class="col-md-3" id="banners">

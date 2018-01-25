@@ -78,7 +78,7 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
-          <?php if (!isset($_POST["Nombre"])) ?>
+          <?php if (!isset($_POST["Nombre"])) :?>
           <form method="post">
             <div class="form-group">
               <label for="Nombre">Nombre: </label>
@@ -108,13 +108,14 @@
               <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
             </div>
           </form>
+
           <?php else: ?>
 
             <?php
 
             $Nombre = $_POST["Nombre"];
             $Descripcion = $_POST["Descripcion"];
-            $Fecha = $_POST["Fecha"]:
+            $Fecha = $_POST["Fecha"];
             $Material = $_POST["Material"];
             $Autor = $_POST["Autor"];
             $Imagen = $_POST["Imagen"];

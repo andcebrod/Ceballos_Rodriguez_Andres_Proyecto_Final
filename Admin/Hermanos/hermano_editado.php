@@ -2,12 +2,23 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
 
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
     <div class="container">
 
       <div class="row" class="header">
@@ -72,38 +83,38 @@
             <form method="post">
               <div class="form-group">
                 <label for="nombre">Nombre: </label>
-                <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre">
+                <input type="text" class="form-control" name="Nombre" value="<?php echo $_GET['Nombre']; ?>">
               </div>
               <div class="form-group">
                 <label for="Apellidos">Apellidos: </label>
-                <input type="text" class="form-control" name="Apellidos" placeholder="Introduce Apellidos">
+                <input type="text" class="form-control" name="Apellidos" value="<?php echo $_GET['Apellidos']; ?>">
               </div>
               <div class="form-group">
                 <label for="DNI">DNI: </label>
-                <input type="text" class="form-control" name="DNI" placeholder="Introduce DNI">
+                <input type="hidden" class="form-control" name="DNI" value="<?php echo $_GET['DNI']; ?>">
               </div>
               <div class="form-group">
                 <label for="FechaNacimiento">Fecha de Nacimiento: </label>
-                <input type="date" class="form-control" name="FechaNacimiento">
+                <input type="date" class="form-control" name="FechaNacimiento" value="<?php echo $_GET['FechaNacimiento']; ?>">
               </div>
               <div class="form-group">
                 <label for="Direccion">Direccion: </label>
-                <input type="text" class="form-control" name="Direccion" placeholder="Introduce Direccion">
+                <input type="text" class="form-control" name="Direccion" value="<?php echo $_GET['Direccion']; ?>">
               </div>
               <div class="form-group">
                 <label for="Ciudad">Ciudad: </label>
-                <input type="text" class="form-control" name="Ciudad" placeholder="Introduce Ciudad">
+                <input type="text" class="form-control" name="Ciudad" value="<?php echo $_GET['Ciudad']; ?>">
               </div>
               <div class="form-group">
                 <label for="Provincia">Provincia: </label>
-                <input type="text" class="form-control" name="Provincia" placeholder="Introduce Provincia">
+                <input type="text" class="form-control" name="Provincia" value="<?php echo $_GET['Provincia']; ?>">
               </div>
               <div class="form-group">
                 <label for="Correo">Correo Electrónico: </label>
-                <input type="email" class="form-control" name="Correo" placeholder="Introduce Correo">
+                <input type="email" class="form-control" name="Correo" value="<?php echo $_GET['Correo']; ?>">
               </div>
               <div class="form-group">
-                <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
+                <input class="btn btn-default" type="submit" name="enviar" value="Editar Usuario">
               </div>
             </form>
 
@@ -120,8 +131,21 @@
               $Provincia = $_POST["Provincia"];
               $Correo = $_POST ["Correo"];
 
+              $query= "UPDATE Hermanos SET Nombre='$Nombre', Apellidos='$Apellidos',
+              DNI='$DNI',
+              FechaNacimiento = '$FechaNacimiento',
+              Direccion='$Direccion',
+              Ciudad = '$Ciudad',
+              Provincia = '$Provincia',
+              Correo='$Correo'
+              WHERE DNI = '$DNI'";
 
-
+              echo $query;
+              if ($result = $connection->query($query)) {
+                echo "<h1>Datos actualizados</h1>";
+              } else {
+                echo "<h2>Error al actualizar los datos</h2>";
+              }
                ?>
 
 

@@ -76,7 +76,6 @@
               <tr>
                 <td><span>Usuarios </span></td>
                 <td>
-                  <a href="Usuarios/editar_usuarios.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
                   <a href="Usuarios/eliminar_usuarios.php"><img src="Images/delete.png" height="22px" width="22px"></a>
                 </td>
               </tr>
@@ -92,24 +91,18 @@
                 <td><span>Articulos </span></td>
                 <td>
                   <a href="Articulos/anadir_articulos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Articulos/editar_articulos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Articulos/eliminar_articulos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
                 </td>
               </tr>
               <tr>
                 <td><span>Eventos </span></td>
                 <td>
                   <a href="Eventos/anadir_eventos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Eventos/editar_eventos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Eventos/eliminar_eventos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
                 </td>
               </tr>
               <tr>
                 <td><span>Bienes </span></td>
                 <td>
                   <a href="Bienes/anadir_bienes.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Bienes/editar_bienes.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Bienes/eliminar_bienes.php"><img src="Images/delete.png" height="22px" width="22px"></a>
                 </td>
               </tr>
 

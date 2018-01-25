@@ -78,7 +78,6 @@
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
           <?php if (!isset($_POST["DNI"])) :?>
-
             <form method="post">
               <div class="form-group">
                 <label for="Titulo">Título: </label>
@@ -138,9 +137,6 @@
               echo "Error al subir";
             }
           }
-
-
-
           ?>
           <?php endif ?>
 

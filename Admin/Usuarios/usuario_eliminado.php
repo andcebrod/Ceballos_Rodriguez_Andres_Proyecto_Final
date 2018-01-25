@@ -77,54 +77,17 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
-
-
           <?php
 
+            $query="DELETE FROM Usuarios WHERE DNI ='".$_GET['DNI']."'";
 
-        $query2 ="SELECT * FROM Hermanos";
+            if ($connection->query($query)) {
 
-        if ($result = $connection->query($query2)) {
+              echo "<h2>Usuario Borrado</h2>";
 
-          echo "<table class='table table-striped'>";
-          while($obj = $result->fetch_object()) {
-
-            $Nombre = $obj->Nombre;
-            $Apellidos = $obj->Apellidos;
-            $DNI = $obj->DNI;
-            $FechaNacimiento = $obj->FechaNacimiento;
-            $Direccion = $obj->Direccion;
-            $Ciudad = $obj->Ciudad;
-            $Provincia = $obj->Provincia;
-            $Correo = $obj->Correo;
-
-
-            echo "<tr>";
-            echo "<td>".$obj->Nombre."</td>";
-            echo "<td>".$obj->Apellidos."</td>";
-            echo "<td>".$obj->DNI."</td>";
-            echo "<td>".$obj->FechaNacimiento."</td>";
-            echo "<td>".$obj->Direccion."</td>";
-            echo "<td>".$obj->Ciudad."</td>";
-            echo "<td>".$obj->Provincia."</td>";
-            echo "<td>".$obj->Correo."</td>";
-            echo "<td><a href='hermano_editado.php?Nombre=".$Nombre.
-            "&Apellidos=".$Apellidos.
-            "&DNI=".$DNI.
-            "&FechaNacimiento=".$FechaNacimiento.
-            "&Direccion=".$Direccion.
-            "&Ciudad=".$Ciudad.
-            "&Provincia=".$Provincia.
-            "&Correo=".$Correo."'>
-            <img src='../Images/lapiz.png' height='22px' width='22px'></a></td>";
-            echo "</tr>";
-            }
-            echo "</table>";
-          }
-
-
-
-
+              } else {
+                echo "<h2>ha habido un fallo</h2>";
+              }
 
            ?>
 
