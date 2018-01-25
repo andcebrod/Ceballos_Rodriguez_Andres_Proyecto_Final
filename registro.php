@@ -9,7 +9,7 @@
   <body>
     <?php
     //CREATING THE CONNECTION
-      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection = new mysqli("127.0.0.1", "root", "Admin2015", "granPoder",3316);
       $connection->set_charset("uft8");
 
 
@@ -86,7 +86,7 @@
                         <input type="email" class="form-control" name="Correo" placeholder="Introduce Correo">
                       </div>
                       <div class="form-group">
-                        <label for="Correo">Nombre de Usuario: </label>
+                        <label for="Nombre">Nombre de Usuario: </label>
                         <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre de Usuario">
                       </div>
                       <div class="form-group">

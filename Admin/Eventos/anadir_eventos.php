@@ -9,7 +9,7 @@
   <body>
     <?php
     //CREATING THE CONNECTION
-      $connection = new mysqli("192.168.1.61", "root", "Admin2015", "granPoder",3316);
+      $connection = new mysqli("127.0.0.1", "root", "Admin2015", "granPoder",3316);
       $connection->set_charset("uft8");
 
 
