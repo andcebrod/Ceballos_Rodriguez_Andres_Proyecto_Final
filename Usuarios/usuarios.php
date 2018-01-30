@@ -2,23 +2,12 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
-    <?php
-    //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "root", "Admin2015", "granPoder",3316);
-      $connection->set_charset("uft8");
 
-
-      //TESTING IF THE CONNECTION WAS RIGHT
-      if ($connection->connect_errno) {
-          printf("Connection failed: %s\n", $connection->connect_error);
-          exit();
-      }
-    ?>
     <div class="container">
 
       <div class="row" class="header">
@@ -69,49 +58,81 @@
           <span><a href="registro.php">Registro</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="usuarios.php">Área de Usuarios</a></span>
+          <span><a href="area_usuario.php">Área de Usuarios</a></span>
         </div>
+
 
 
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9"  id="contprincipal">
-          <?php
-
-
-        $query ="SELECT * FROM Hermanos";
-
-        if ($result = $connection->query($query)) {
-
-          echo "<table class='table table-striped'>";
-          while($obj = $result->fetch_object()) {
-
-            $DNI = $obj->DNI;
-
-            echo "<tr>";
-            echo "<td>".$obj->Nombre."</td>";
-            echo "<td>".$obj->Apellidos."</td>";
-            echo "<td>".$obj->DNI."</td>";
-            echo "<td>".$obj->FechaNacimiento."</td>";
-            echo "<td>".$obj->Direccion."</td>";
-            echo "<td>".$obj->Ciudad."</td>";
-            echo "<td>".$obj->Provincia."</td>";
-            echo "<td>".$obj->Correo."</td>";
-            echo "<td><a href='hermano_eliminado.php?DNI=".$DNI."'>
-            <img src='../Images/delete.png' height='22px' width='22px'></a></td>";
-            echo "</tr>";
-            }
-            echo "</table>";
-          }
-
-
-
-
-
-
-           ?>
-
+        <div class="col-md-9" id="contprincipal">
+          <div class="col-md-6" >
+            <div class="col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="col-md-12" id="cont2">
+              <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+          <div class="col-md-6" >
+            <div class="col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="col-md-12" id="cont2" >
+                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+          <div class="col-md-6" >
+            <div class="col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="col-md-12" id="cont2">
+                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="col-md-12" id="cont2">
+                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+          <div class="col-md-6" >
+            <div class="col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="col-md-12" id="cont2">
+                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+          <div class="col-md-6" >
+            <div class="col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="col-md-12">
+                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
         </div>
         <div class="col-md-3" id="banners">
           <div class="col-md-12">

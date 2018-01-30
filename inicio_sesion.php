@@ -9,7 +9,7 @@
   <body>
     <?php
     //CREATING THE CONNECTION
-      $connection = new mysqli("127.0.0.1", "root", "Admin2015", "granPoder",3316);
+      $connection = new mysqli("localhost", "root", "Admin2015", "granPoder",3316);
       $connection->set_charset("uft8");
 
 
@@ -99,8 +99,20 @@
             $Usuario = $_POST['Usuario'];
             $Password = $_POST['Password'];
             $query = "SELECT * FROM Usuario WHERE Correo ='$Correo' and Password = md5($Password)";
+            if ($result = $connection->query($query)) {
+              if ($result->num_rows==1) {
+                while ($obj = $result->fetch_objet()) {
+                  if ($obj->rol=="usuario") {
+                    $_SESSION["usuario"]=$usuario;
 
-            
+                  }
+                  # code...
+                }
+              }
+
+            }
+
+
 
 
 
