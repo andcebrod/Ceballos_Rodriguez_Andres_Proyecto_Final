@@ -79,6 +79,7 @@
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
           <?php if (!isset($_POST["Nombre"])) :?>
+            <form method="post">
           <div class="form-group">
             <label for="Correo">Correo: </label>
             <input type="text" class="form-control" name="Correo" placeholder="Introduce correo">
@@ -90,29 +91,19 @@
           <div class="form-group">
             <input class="btn btn-default" type="submit" name="enviar" value="Iniciar Sesión">
           </div>
+            </form>
           <div class="form-group">
             <label><b>¿Eres hermano? Regístrate gratis <a href="registro.php">Aquí</a>.</b></label>
           </div>
         <?php else: ?>
 
           <?php
-            $Usuario = $_POST['Usuario'];
-            $Password = $_POST['Password'];
-            $query = "SELECT * FROM Usuario WHERE Correo ='$Correo' and Password = md5($Password)";
+            $Correo = $_POST['Correo'];
+            $Pass = $_POST['Pass'];
+            $query = "SELECT * FROM Usuarios WHERE Correo ='".$Correo."' and Pass = md5('".$Pass."')";
             if ($result = $connection->query($query)) {
-              if ($result->num_rows==1) {
-                while ($obj = $result->fetch_objet()) {
-                  if ($obj->rol=="usuario") {
-                    $_SESSION["usuario"]=$usuario;
-
-                  }
-                  # code...
-                }
-              }
 
             }
-
-
 
 
 

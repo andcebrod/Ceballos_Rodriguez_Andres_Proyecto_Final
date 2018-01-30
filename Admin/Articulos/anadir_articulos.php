@@ -101,7 +101,7 @@
               </div>
               <div class="form-group">
                 <label for="Usuario">DNI Usuario: </label>
-                <input type="text" class="form-control" name="Usuario" placeholder="Introduce tu DNI">
+                <input type="text" class="form-control" name="DNI" placeholder="Introduce tu DNI">
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-default" name="Enviar" value="Publicar">
@@ -115,7 +115,7 @@
           $Cuerpo = $_POST["Cuerpo"];
           $Imagen = $_POST["Imagen"];
           $Fecha = $_POST["Fecha"];
-          $Usuario = $_POST["Usuario"];
+          $DNI = $_POST["DNI"];
 
           $query ="Select CodUsuario FROM Usuarios Where DNI ='".$DNI."'";
 
@@ -125,12 +125,12 @@
 
             $CodUsuario = $obj->CodUsuario;
 
-            $query2 = "INSERT INTO Eventos (Titulo, Subtitulo, Cuerpo, Imagen, Fecha, CodUsuario)
+            $query2 = "INSERT INTO Articulos (Titulo, Subtitulo, Cuerpo, Imagen, Fecha, CodUsuario)
             VALUES ('$Titulo','$Subtitulo','$Cuerpo','$Imagen','$Fecha', $CodUsuario )";
 
             echo $query2;
 
-            if ($connection->query($query2)) {
+            if ($result=$connection->query($query2)) {
 
               echo "Ha sido subido";
             }  else {

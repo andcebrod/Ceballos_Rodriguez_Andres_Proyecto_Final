@@ -7,6 +7,18 @@
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("localhost", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
+
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+      ?>
 
     <div class="container">
 
@@ -67,95 +79,63 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-              <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2" >
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
+
+          <?php
+
+          $query = "SELECT * FROM Articulos order by Fecha desc";
+          if ($connection->query($query)) {
+
+          if ($result = $connection->query($query)) {
+
+
+
+
+            while ($obj = $result->fetch_object()) {
+              $Titulo = $obj->Titulo;
+              $Subtitulo = $obj->Subtitulo;
+              $Cuerpo = $obj->Cuerpo;
+              $Imagen = $obj->Imagen;
+              $Fecha = $obj->Fecha;
+
+              echo "<div class='col-md-6' >";
+              echo "  <div class='col-md-12'>";
+              echo "  <img src=".$Imagen.">";
+              echo "  </div>";
+              echo "<div class='col-md-12' id='cont2'>";
+              echo "<p><h2>".$Titulo."</h2></p>";
+              echo "<p>$Subtitulo</p>";
+              echo "</div>";
+              echo "</div>";
+
+              }
+
+            }
+          }
+           ?>
+
+
+      </div>
+      <div class="col-md-3" id="banners">
+        <div class="col-md-12">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
+            t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
+            o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
+            idatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
         </div>
-        <div class="col-md-3" id="banners">
-          <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
-              t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
-              o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
-              idatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          </div>
-          <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
-              t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
-              o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
-              idatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          </div>
+        <div class="col-md-12">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
+            t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
+            o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
+            idatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
         </div>
 
+      </div>
       </div>
 
       <div class="row" id="foot">
