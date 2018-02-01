@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
@@ -18,7 +18,7 @@
           printf("Connection failed: %s\n", $connection->connect_error);
           exit();
       }
-    ?>
+      ?>
 
     <div class="container">
 
@@ -70,77 +70,44 @@
           <span><a href="registro.php">Registro</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="usuarios.php">Área de Usuarios</a></span>
+          <span><a href="area_usuario.php">Área de Usuarios</a></span>
         </div>
+
+
 
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9"  id="contprincipal">
-          <?php if (!isset($_POST["DNI"])) :?>
-            <form method="post">
-              <div class="form-group">
-                <label for="Titulo">Título: </label>
-                <input type="text" class="form-control" name="Titulo" placeholder="Introduce Titulo">
-              </div>
-              <div class="form-group">
-                <label for="Subtitulo">Subtítulo: </label>
-                <input type="text" class="form-control" name="Subtitulo" placeholder="Introduce Subtitulo">
-              </div>
-              <div class="form-group">
-                <label for="Cuerpo">Cuerpo: </label>
-                <input type="text" class="form-control" name="Cuerpo" placeholder="Introduce Cuerpo">
-              </div>
-              <div class="form-group">
-                <label for="Imagen">Imagen: </label>
-                <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de la Imagen">
-              </div>
-              <div class="form-group">
-                <label for="fecha">Introduce fecha: </label>
-                <input type="date" class="form-control" name="Fecha" placeholder="Introduce Fecha">
-              </div>
-              <div class="form-group">
-                <label for="DNI">DNI Usuario: </label>
-                <input type="text" class="form-control" name="DNI" placeholder="Introduce tu DNI">
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-default" name="Enviar" value="Publicar">
-              </div>
+        <div class="col-md-9" id="contprincipal">
 
-          <?php else: ?>
           <?php
 
-          $Titulo = $_POST["Titulo"];
-          $Subtitulo = $_POST["Subtitulo"];
-          $Cuerpo = $_POST["Cuerpo"];
-          $Imagen = $_POST["Imagen"];
-          $Fecha = $_POST["Fecha"];
-          $DNI = $_POST["DNI"];
+          $query = "SELECT * FROM Bienes order by Fecha desc";
 
-          $query ="Select CodUsuario FROM Usuarios Where DNI ='".$DNI."'";
+          if ($connection->query($query)) {
+          if ($result = $connection->query($query)) {
+            while ($obj = $result->fetch_object()) {
+              $Nombre = $obj->Nombre;
+              $Autor = $obj->Autor;
+              $Imagen = $obj->Imagen;
+              $Fecha = $obj->Fecha;
+              $Material = $obj->Material;
 
-          if ($result=$connection->query($query)) {
+              echo "<div class='col-md-6' >";
+              echo "  <div class='col-md-12'>";
+              echo "  <img src=".$Imagen.">";
+              echo "  </div>";
+              echo "<div class='col-md-12' id='cont2'>";
+              echo "<p><h2>".$Nombre."</h2></p>";
+              echo "<p><span>$Autor , $Material</span</p>";
+              echo "</div>";
+              echo "</div>";
 
-            $obj = $result->fetch_object();
+              }
 
-            $CodUsuario = $obj->CodUsuario;
-
-            $query2 = "INSERT INTO Eventos (Titulo, Subtitulo, Cuerpo, Imagen, Fecha, CodUsuario)
-            VALUES ('$Titulo','$Subtitulo','$Cuerpo','$Imagen','$Fecha', $CodUsuario )";
-
-            echo $query2;
-
-            if ($connection->query($query2)) {
-
-              echo "Ha sido subido";
-            }  else {
-              echo "Error al subir";
             }
           }
-          ?>
-          <?php endif ?>
-
-
+           ?>
         </div>
         <div class="col-md-3" id="banners">
           <div class="col-md-12">

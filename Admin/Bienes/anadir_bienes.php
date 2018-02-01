@@ -97,7 +97,7 @@
               <input type="text" class="form-control" name="Material" placeholder="Introduce Material">
             </div>
             <div class="form-group">
-              <label for="nombre">Autor: </label>
+              <label for="Autor">Autor: </label>
               <input type="text" class="form-control" name="Autor" placeholder="Introduce Autor">
             </div>
             <div class="form-group">
@@ -121,7 +121,7 @@
             $Imagen = $_POST["Imagen"];
 
             $query = "INSERT INTO Bienes (Nombre, Descripcion, Fecha, Material, Autor, Imagen)
-            VALUES ('$Nombre','$Descripcion','$Fecha','$Material',$Autor, '$Imagen' )";
+            VALUES ('$Nombre','$Descripcion','$Fecha','$Material','$Autor', '$Imagen' )";
 
             if ($result=$connection->query($query)) {
                 echo "Ha sido subido";
