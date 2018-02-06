@@ -82,6 +82,32 @@
 
           <?php
 
+          $query = "SELECT * FROM Eventos WHERE CodEvento ='".$_GET['CodEvento']."'";
+
+          if ($connection->query($query)) {
+
+          if ($result = $connection->query($query)) {
+
+            while ($obj = $result->fetch_object()) {
+
+              $Titulo = $obj->Titulo;
+              $Subtitulo = $obj->Subtitulo;
+              $Cuerpo = $obj->Cuerpo;
+              $Imagen = $obj->Imagen;
+              $Fecha = $obj->Fecha;
+
+              echo "<img class='rounded' src=".$Imagen.">";
+              echo "<h1>$Titulo</h1>";
+              echo "<h2>$Subtitulo</h2>";
+              echo "<p>$Cuerpo</p>";
+              echo "<span>$Fecha</span>";
+
+
+              }
+
+            }
+          }
+
            ?>
 
 

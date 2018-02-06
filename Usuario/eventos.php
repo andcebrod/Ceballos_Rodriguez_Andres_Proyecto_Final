@@ -96,17 +96,17 @@
               $Cuerpo = $obj->Cuerpo;
               $Imagen = $obj->Imagen;
               $Fecha = $obj->Fecha;
+              $CodEvento = $obj->CodEvento;
 
               echo "<div class='col-md-6' >";
               echo "  <div class='col-md-12'>";
-              echo "  <img src=".$Imagen.">";
+              echo "  <img class='rounded' src=".$Imagen.">";
               echo "  </div>";
               echo "<div class='col-md-12' id='cont2'>";
-              echo "<p><h2>".$Titulo."</h2></p>";
+              echo "<p><h2><a href='evento_seleccionado.php?CodEvento=".$CodEvento."'>".$Titulo."</a></h2></p>";
               echo "<p>$Subtitulo</p>";
               echo "</div>";
               echo "</div>";
-
               }
 
             }

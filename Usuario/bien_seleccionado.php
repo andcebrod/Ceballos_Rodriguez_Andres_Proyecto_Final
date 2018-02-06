@@ -82,8 +82,37 @@
 
           <?php
 
-           ?>
+          $query = "SELECT * FROM Bienes WHERE CodBien ='".$_GET['CodBien']."'";
 
+          if ($connection->query($query)) {
+
+          if ($result = $connection->query($query)) {
+
+            while ($obj = $result->fetch_object()) {
+
+              $Nombre = $obj->Nombre;
+              $Autor = $obj->Autor;
+              $Imagen = $obj->Imagen;
+              $Fecha = $obj->Fecha;
+              $Material = $obj->Material;
+              $CodBien = $obj->CodBien;
+              $Descripcion = $obj->Descripcion;
+
+              echo "<img class='rounded' src=".$Imagen.">";
+              echo "<h1>$Nombre</h1>";
+              echo "<ul class='list-group'>";
+              echo "<li class='list-group-item'>Autor: ".$Autor."</li>";
+              echo "<li class='list-group-item'>Material: ".$Material."</li>";
+              echo "<li class='list-group-item'>Decripción: ".$Descripcion."</li>";
+              echo "<li class='list-group-item'>Decripción: ".$Fecha."</li>";
+              echo "</ul>";
+
+              }
+
+            }
+          }
+
+           ?>
 
       </div>
       <div class="col-md-3" id="banners">
