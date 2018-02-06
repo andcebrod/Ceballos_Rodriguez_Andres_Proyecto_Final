@@ -22,36 +22,33 @@
 
     <div class="container">
 
-      <div class="row" class="header">
-        <div class="col-md-12" id="social">
-          <div class="col-md-9" id="social1">
-            <span>Bienvenido a la web de la Hermandad Sacramental Ntro Padre</span>
-          </div>
-          <div class="col-md-3">
-            <div class="col-md-4">
-              <span>aa</span>
-            </div>
-            <div class="col-md-4">
-              <span>aa</span>
-            </div>
-            <div class="col-md-4">
-              <span>aa</span>
-            </div>
-          </div>
+      <div class="row" id="social">
+        <div class="col-md-9" id="social1">
+          <span>Bienvenido a la web de la Hermandad Sacramental Ntro Padre</span>
         </div>
-        <div class="col-md-12" id="logo">
-          <div class="col-md-3">
-            <span>aaaaa</span>
+        <div class="col-md-1">
+            <span>aa</span>
           </div>
-          <div class="col-md-6">
-            <h2>Hermandad Sacramental Nuestro Padre Jesús del Gran Poder<br>
+        <div class="col-md-1">
+            <span>aa</span>
+          </div>
+        <div class="col-md-1">
+            <span>aa</span>
+          </div>
+      </div>
+      <div class="row header">
+        <div class="col-md-3">
+          <span>aaaaa</span>
+        </div>
+        <div class="col-md-6">
+          <h2>Hermandad Sacramental Nuestro Padre Jesús del Gran Poder<br>
             Maria Santisima de los Dolores <br>
              y Beato Antonio Martinez Gil</h2>
-          </div>
-          <div class="col-md-3">
-            <span>aaaaaaa</span>
-          </div>
         </div>
+        <div class="col-md-3">
+            <span>aaaaaaa</span>
+        </div>
+
       </div>
       <div class="row" id="menu">
         <div class="col-md-2" id="selmenu">
@@ -67,7 +64,7 @@
           <span><a href="bienes.php">Bienes</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="registro.php">Registro</a></span>
+          <span><a href="../registro.php">Registro</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
           <span><a href="area_usuario.php">Área de Usuarios</a></span>
@@ -78,7 +75,7 @@
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9" id="contprincipal">
+        <div class="row col-md-10" id="contprincipal">
 
           <?php
 
@@ -98,7 +95,7 @@
               $Fecha = $obj->Fecha;
               $CodEvento = $obj->CodEvento;
 
-              echo "<div class='col-md-6' >";
+              echo "<div class='col-md-5' >";
               echo "  <div class='col-md-12'>";
               echo "  <img class='rounded' src=".$Imagen.">";
               echo "  </div>";
@@ -115,7 +112,7 @@
 
 
       </div>
-      <div class="col-md-3" id="banners">
+      <div class="col-md-2" id="banners">
         <div class="col-md-12">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
             t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc

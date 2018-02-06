@@ -10,33 +10,28 @@
 
     <div class="container">
       <div class="row" id="social">
-        <div class="col-md-9" id="social1">
-          <span>Bienvenido a la web de la Hermandad Sacramental Ntro Padre</span>
+        <div class="col-md-8" id="social1">
+          <span>Bienvenido a la web de nuestra Hermandad. Si eres hermano inicia sesión o registrate gratis: </span>
         </div>
-        <div class="col-md-1">
-            <span>aa</span>
+        <div class="col-md-2">
+            <a class="btn btn-secondary" href="../inicio_sesion.php">Iniciar Sesion</a>
           </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
-        <div class="col-md-1">
-            <span>aa</span>
+        <div class="col-md-2">
+            <a class="btn btn-secondary" href="../registro.php">¡Registrate!</a>
           </div>
       </div>
+
       <div class="row header">
-        <div class="col-md-3">
-          <span>aaaaa</span>
-        </div>
-        <div class="col-md-6">
-          <h2>Hermandad Sacramental Nuestro Padre Jesús del Gran Poder<br>
-            Maria Santisima de los Dolores <br>
+        <div class="col-md-9">
+          <h2>Hermandad Sacramental Nuestro Padre Jesús del Gran Poder Maria Santisima de los Dolores
              y Beato Antonio Martinez Gil</h2>
         </div>
         <div class="col-md-3">
-            <span>aaaaaaa</span>
-        </div>
+          <img src="simbolo.png">
 
+        </div>
       </div>
+
       <div class="row" id="menu">
         <div class="col-md-2" id="selmenu">
           <span><a href="index.php">Inicio</a></span>
@@ -51,7 +46,7 @@
           <span><a href="bienes.php">Bienes</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="registro.php">Registro</a></span>
+          <span><a href="../registro.php">Registro</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
           <span><a href="area_usuario.php">Área de Usuarios</a></span>
@@ -62,75 +57,75 @@
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9" id="contprincipal">
-          <div class="col-md-6" >
-            <div class="col-md-12">
+        <div class="row col-md-10" id="contprincipal">
+          <div class="row cont2 col-md-5" >
+            <div class="row col-md-12">
               <img src="ola.png" >
             </div>
-            <div class="col-md-12" id="cont2">
-              <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2" >
+            <div class="row col-md-12">
                 <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam.</p>
             </div>
           </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
+          <div class="row cont2 col-md-5" >
+            <div class="row col-md-12">
               <img src="ola.png" >
             </div>
-            <div class="col-md-12" id="cont2">
+            <div class="row col-md-12">
                 <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam.</p>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="col-md-12">
+          <div class="row cont2 col-md-5" >
+            <div class="row col-md-12">
               <img src="ola.png" >
             </div>
-            <div class="col-md-12" id="cont2">
+            <div class="row col-md-12">
                 <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam.</p>
             </div>
           </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
+          <div class="row cont2 col-md-5" >
+            <div class="row col-md-12">
               <img src="ola.png" >
             </div>
-            <div class="col-md-12" id="cont2">
+            <div class="row col-md-12">
                 <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam.</p>
             </div>
           </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
+          <div class="row cont2 col-md-5" >
+            <div class="row col-md-12">
               <img src="ola.png" >
             </div>
-            <div class="col-md-12">
+            <div class="row col-md-12">
                 <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam.</p>
             </div>
           </div>
-        </div>
-        <div class="col-md-3" id="banners">
+          <div class="row cont2 col-md-5" >
+            <div class="row col-md-12">
+              <img src="ola.png" >
+            </div>
+            <div class="row col-md-12">
+                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+      </div>
+        <div class="col-md-2" id="banners">
           <div class="col-md-12">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
               t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
