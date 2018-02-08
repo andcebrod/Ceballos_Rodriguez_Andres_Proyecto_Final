@@ -52,7 +52,7 @@
           <span><a href="../Usuario/bienes.php">Bienes</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="../Usuario/registro.php">Registro</a></span>
+          <span><a href="../registro.php">Registro</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
           <span><a href="../Usuario/usuarios.php">Área de Usuarios</a></span>

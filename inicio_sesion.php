@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -74,7 +77,7 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
-          <?php if (!isset($_POST["Nombre"])) :?>
+          <?php if (!isset($_POST["Correo"])) :?>
             <form method="post">
           <div class="form-group">
             <label for="Correo">Correo: </label>
@@ -97,9 +100,26 @@
             $Correo = $_POST['Correo'];
             $Pass = $_POST['Pass'];
             $query = "SELECT * FROM Usuarios WHERE Correo ='".$Correo."' and Pass = md5('".$Pass."')";
-            if ($result = $connection->query($query)) {
 
-            }
+            if ($result = $connection->query($query)) {
+                while ($obj = $result->fetch_object()) {
+                  $Rol = $obj->Rol;
+                  $Correo = $obj->Correo;
+              //No rows returned
+              if ($result->num_rows===0) {
+                echo "Datos erróneos. Por favor, inténtelo otra vez.";
+              } else {
+                //VALID LOGIN. SETTING SESSION VARS
+                $_SESSION["Correo"]=$Correo;
+                $_SESSION["Rol"]=$Rol;
+                if ($_SESSION["Rol"]="User" ) {
+                  header("Location: Usuario/index.php");
+                } elseif ($_SESSION["Rol"]="Admin" ) {
+                  header("Location: Admin/admin.php");
+                      }
+                    }
+                }
+              }
 
 
 

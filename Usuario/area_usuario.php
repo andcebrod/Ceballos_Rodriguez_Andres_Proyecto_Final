@@ -1,3 +1,17 @@
+<?php
+
+  //Open the session
+  session_start();
+
+  if (isset($_SESSION["Rol"])) {
+    //SESSION ALREADY CREATED
+    //SHOW SESSION DATA
+    var_dump($_SESSION);
+  } else {
+    session_destroy();
+    header("Location: ../inicio_sesion.php");
+  }
+ ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
