@@ -75,7 +75,7 @@
       </div>
 
       <div class="row" class="contenido">
-        <div class="row col-md-10" id="contprincipal">
+        <div class="row col-md-9" id="contprincipal">
 
           <?php
 
@@ -95,7 +95,7 @@
               $Fecha = $obj->Fecha;
               $CodEvento = $obj->CodEvento;
 
-              echo "<div class='col-md-5' >";
+              echo "<div class='col-md-6' >";
               echo "  <div class='col-md-12'>";
               echo "  <img class='rounded' src=".$Imagen.">";
               echo "  </div>";
@@ -112,7 +112,7 @@
 
 
       </div>
-      <div class="col-md-2" id="banners">
+      <div class="col-md-3" id="banners">
         <div class="col-md-12">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
             t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc

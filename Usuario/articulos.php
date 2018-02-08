@@ -75,11 +75,11 @@
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9" id="contprincipal">
+        <div class="row col-md-9" id="contprincipal">
 
           <?php
 
-          $query = "SELECT * FROM Articulos order by Fecha desc";
+          $query = "SELECT * FROM Articulos order by Fecha desc limit 6";
           if ($connection->query($query)) {
 
           if ($result = $connection->query($query)) {
