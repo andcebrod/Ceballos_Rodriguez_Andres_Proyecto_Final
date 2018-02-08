@@ -1,0 +1,39 @@
+.container {
+}
+
+#social1 {
+  margin-top: 9px;
+}
+
+#social {
+  height: 40px;
+  color: #fff;
+  background-color: red;
+}
+
+#logo {
+  text-align: center;
+  height: 175px;
+  background-color: green;
+}
+#menu {
+  text-align: center;
+  height: 50px;
+  color: #fff;
+  background-color: purple;
+}
+#selmenu {
+  margin-top: 14px;
+}
+#banners {
+  color: #fff;
+  background-color: blue;
+}
+#foot {
+  background-color: black;
+  color: #fff;
+}
+
+#cont2 {
+  border-bottom:2px solid #390D26;
+}

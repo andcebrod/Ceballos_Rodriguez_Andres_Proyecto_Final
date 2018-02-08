@@ -51,19 +51,19 @@
       </div>
       <div class="row" id="menu">
         <div class="col-md-2" id="selmenu">
-          <span><a href="index.php">Inicio</a></span>
+          <span><a href="../Usuario/index.php">Inicio</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="eventos.php">Eventos</a></span>
+          <span><a href="../Usuario/eventos.php">Eventos</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="articulos.php">Articulos</a></span>
+          <span><a href="../Usuario/articulos.php">Articulos</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="bienes.php">Bienes</a></span>
+          <span><a href="../Usuario/bienes.php">Bienes</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
-          <span><a href="registro.php">Registro</a></span>
+          <span><a href="../registro.php">Registro</a></span>
         </div>
         <div class="col-md-2" id="selmenu">
           <span><a href="usuarios.php">Área de Usuarios</a></span>
