@@ -112,9 +112,9 @@
                 //VALID LOGIN. SETTING SESSION VARS
                 $_SESSION["Correo"]=$Correo;
                 $_SESSION["Rol"]=$Rol;
-                if ($_SESSION["Rol"]="User" ) {
+                if ($_SESSION["Rol"] == "User" ) {
                   header("Location: Usuario/index.php");
-                } elseif ($_SESSION["Rol"]="Admin" ) {
+                } elseif ($_SESSION["Rol"] == "Admin" ) {
                   header("Location: Admin/admin.php");
                       }
                     }
