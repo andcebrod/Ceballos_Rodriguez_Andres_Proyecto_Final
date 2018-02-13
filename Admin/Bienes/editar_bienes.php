@@ -18,12 +18,23 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("localhost", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
 
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
     <div class="container">
 
       <div class="row" id="social">
@@ -74,60 +85,55 @@
           <span><a href="../Usuario/usuarios.php">Área de Usuarios</a></span>
         </div>
 
+
       </div>
 
       <div class="row" class="contenido">
         <div class="col-md-9"  id="contprincipal">
-          <table class="table table-striped" id="administracion">
-            <thead>
-              <tr>
-                <th>Tabla</th>
-                <th>Opciones a Realizar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span>Usuarios </span></td>
-                <td>
-                  <a href="Usuarios/eliminar_usuarios.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Hermanos </span></td>
-                <td>
-                    <a href="Hermanos/anadir_hermanos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                    <a href="Hermanos/editar_hermanos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                    <a href="Hermanos/eliminar_hermanos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Articulos </span></td>
-                <td>
-                  <a href="Articulos/anadir_articulos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Articulos/editar_articulos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Articulos/eliminar_articulos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Eventos </span></td>
-                <td>
-                  <a href="Eventos/anadir_eventos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Eventos/editar_eventos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Eventos/eliminar_eventos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Bienes </span></td>
-                <td>
-                  <a href="Bienes/anadir_bienes.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Bienes/editar_bienes.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Bienes/eliminar_bienes.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
 
 
-            </tbody>
-          </table>
+          <?php
+
+
+        $query2 ="SELECT * FROM Bienes order by fecha";
+
+        if ($result = $connection->query($query2)) {
+
+          echo "<table class='table table-striped'>";
+          while($obj = $result->fetch_object()) {
+
+            $Nombre = $obj->Nombre;
+            $Material = $obj->Material;
+            $Autor =$obj->Autor;
+            $Imagen = $obj->Imagen;
+            $Fecha =$obj->Fecha;
+            $Descripcion = $obj->Descripcion;
+            $CodBien = $obj->CodBien;
+
+
+            echo "<tr>";
+            echo "<td>".$obj->Nombre."</td>";
+            echo "<td>".$obj->Material."</td>";
+            echo "<td>".$obj->Autor."</td>";
+            echo "<td>".$obj->Fecha."</td>";
+            echo "<td><a href='bien_editado.php?Nombre=".$Nombre.
+            "&Fecha=".$Fecha.
+            "&Descripcion=".$Descripcion.
+            "&Material=".$Material.
+            "&Autor=".$Autor.
+            "&Imagen=".$Imagen.
+            "&CodBien=".$CodBien."'>
+            <img src='../Images/lapiz.png' height='22px' width='22px'></a></td>";
+            echo "</tr>";
+            }
+            echo "</table>";
+          }
+
+
+
+
+
+           ?>
 
         </div>
         <div class="col-md-3" id="banners">

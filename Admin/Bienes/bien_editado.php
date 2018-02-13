@@ -18,12 +18,23 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <?php
+    //CREATING THE CONNECTION
+      $connection = new mysqli("localhost", "root", "Admin2015", "granPoder",3316);
+      $connection->set_charset("uft8");
 
+
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+    ?>
     <div class="container">
 
       <div class="row" id="social">
@@ -74,60 +85,80 @@
           <span><a href="../Usuario/usuarios.php">Área de Usuarios</a></span>
         </div>
 
+
       </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-9"  id="contprincipal">
-          <table class="table table-striped" id="administracion">
-            <thead>
-              <tr>
-                <th>Tabla</th>
-                <th>Opciones a Realizar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span>Usuarios </span></td>
-                <td>
-                  <a href="Usuarios/eliminar_usuarios.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Hermanos </span></td>
-                <td>
-                    <a href="Hermanos/anadir_hermanos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                    <a href="Hermanos/editar_hermanos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                    <a href="Hermanos/eliminar_hermanos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Articulos </span></td>
-                <td>
-                  <a href="Articulos/anadir_articulos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Articulos/editar_articulos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Articulos/eliminar_articulos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Eventos </span></td>
-                <td>
-                  <a href="Eventos/anadir_eventos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Eventos/editar_eventos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Eventos/eliminar_eventos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
-              <tr>
-                <td><span>Bienes </span></td>
-                <td>
-                  <a href="Bienes/anadir_bienes.php"><img src="Images/plus.png" height="22px" width="22px"></a>
-                  <a href="Bienes/editar_bienes.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
-                  <a href="Bienes/eliminar_bienes.php"><img src="Images/delete.png" height="22px" width="22px"></a>
-                </td>
-              </tr>
+        <div class="col-md-9" id="contprincipal">
+
+          <?php if (!isset($_POST["DNI"])) :?>
+
+            <form method="post">
+              <div class="form-group">
+                <label for="Titulo">Nombre: </label>
+                <input type="text" class="form-control" name="Nombre" value="<?php echo $_GET['Nombre']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="Autor">Autor: </label>
+                <input type="text" class="form-control" name="Autor" value="<?php echo $_GET['Autor']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="Material">Material: </label>
+                <input type="text" class="form-control" name="Material" value="<?php echo $_GET['Material']; ?>">
+              </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" name="CodBien" value="<?php echo $_GET['CodBien']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="Fecha">Fecha: </label>
+                <input type="date" class="form-control" name="Fecha" value="<?php echo $_GET['Fecha']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="Cuerpo">Descripcion: </label>
+                <input type="text" class="form-control" name="Descripcion" value="<?php echo $_GET['Descripcion']; ?>">
+              </div>
+              <div class="form-group">
+                <label for="Imagen">Imagen: </label>
+                <input type="text" class="form-control" name="Imagen" value="<?php echo $_GET['Imagen']; ?>">
+              </div>
+
+              <div class="form-group">
+                <input class="btn btn-default" type="submit" name="enviar" value="Editar Bien">
+              </div>
+            </form>
+
+            <?php else: ?>
+
+              <?php
+
+              $Nombre = $_POST["Nombre"];
+              $Subtitulo = $_POST["Material"];
+              $Cuerpo = $_POST["Descripcion"];
+              $Autor = $_POST["Autor"];
+              $Imagen = $_POST["Imagen"];
+              $Fecha = $_POST["Fecha"];
+              $CodBien = $POST["CodBien"];
 
 
-            </tbody>
-          </table>
+              $query= "UPDATE Eventos SET Nombre='$Nombre', Material='$Material',
+              Descripcion='$Descripcion',
+              Fecha = '$Fecha',
+              Autor='$Autor',
+              Imagen = '$Imagen'
+              WHERE CodEvento = '$CodEvento'";
+
+              echo $query;
+              if ($result = $connection->query($query)) {
+                echo "<h1>Datos actualizados</h1>";
+              } else {
+                echo "<h2>Error al actualizar los datos</h2>";
+              }
+               ?>
+
+
+            <?php endif ?>
+
+
 
         </div>
         <div class="col-md-3" id="banners">

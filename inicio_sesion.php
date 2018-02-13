@@ -28,13 +28,13 @@
 
         <form class="form-signin" method="post">
           <img class="mb-4" src="escudo.jpg" alt="" width="72" height="72">
-          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" name="Correo">
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" class="form-control" placeholder="Password" required="" name="Pass">
+          <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesión</h1>
+          <label for="inputEmail" class="sr-only">Email</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" name="Correo">
+          <label for="inputPassword" class="sr-only">Contraseña</label>
+          <input type="password" class="form-control" placeholder="Contraseña" required="" name="Pass">
           </div>
-      <button class="btn btn-lg btn-primary btn-block" name="enviar" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" name="enviar" type="submit">Entrar</button>
       <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
         </form>
 
@@ -57,7 +57,7 @@
                 $_SESSION["Correo"]=$Correo;
                 $_SESSION["Rol"]=$Rol;
                 if ($_SESSION["Rol"] == "User" ) {
-                  header("Location: Usuario/index.php");
+                  header("Location: Usuario/Eventos.php");
                 } elseif ($_SESSION["Rol"] == "Admin" ) {
                   header("Location: Admin/admin.php");
                       }
