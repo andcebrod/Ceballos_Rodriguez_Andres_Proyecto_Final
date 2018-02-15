@@ -91,7 +91,7 @@
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
 
-          <?php if (!isset($_POST["DNI"])) :?>
+          <?php if (!isset($_POST["CodArticulo"])) :?>
 
             <form method="post">
               <div class="form-group">
@@ -106,7 +106,7 @@
                 <input type="hidden" class="form-control" name="CodArticulo" value="<?php echo $_GET['CodArticulo']; ?>">
               </div>
               <div class="form-group">
-                <input type="hidden" class="form-control" name="CodArticulo" value="<?php echo $_GET['CodUsuario']; ?>">
+                <input type="hidden" class="form-control" name="CodUsuario" value="<?php echo $_GET['CodUsuario']; ?>">
               </div>
               <div class="form-group">
                 <label for="Fecha">Fecha: </label>

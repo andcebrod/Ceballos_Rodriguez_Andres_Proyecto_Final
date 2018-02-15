@@ -91,7 +91,7 @@
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
 
-          <?php if (!isset($_POST["DNI"])) :?>
+          <?php if (!isset($_POST["CodEvento"])) :?>
 
             <form method="post">
               <div class="form-group">
@@ -138,7 +138,8 @@
               $CodEvento = $_POST["CodEvento"];
               $CodUsuario = $_POST["CodUsuario"];
 
-              $query= "UPDATE Eventos SET Titulo='$Titulo', Subtitulo='$Subtitulo',
+              $query= "UPDATE Eventos SET Titulo='$Titulo',
+              Subtitulo='$Subtitulo',
               CodEvento='$CodEvento',
               CodUsuario='$CodUsuario',
               Fecha = '$Fecha',
@@ -147,6 +148,7 @@
               WHERE CodEvento = '$CodEvento'";
 
               echo $query;
+
               if ($result = $connection->query($query)) {
                 echo "<h1>Datos actualizados</h1>";
               } else {
