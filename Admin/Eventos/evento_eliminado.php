@@ -6,7 +6,6 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-    var_dump($_SESSION);
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -19,7 +18,6 @@
   <head>
     <meta charset="utf-8">
 <link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>

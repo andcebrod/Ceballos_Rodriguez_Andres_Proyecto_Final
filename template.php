@@ -10,7 +10,7 @@
   <body>
 
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
+    <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -96,8 +96,8 @@
 
       </div>
 
-      <div class="row" id="foot">
-        <p> </p>
+      <div class="row col-md-12 bg-secondary text-center text-light">
+        <p class="mx-auto">Copyright © Hermandad Sacramental Gran Poder Montellano 2018 Todos los derechos reservados.</p>
 
       </div>
 

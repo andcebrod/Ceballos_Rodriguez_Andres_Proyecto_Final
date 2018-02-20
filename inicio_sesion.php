@@ -57,7 +57,7 @@
                 $_SESSION["Correo"]=$Correo;
                 $_SESSION["Rol"]=$Rol;
                 if ($_SESSION["Rol"] == "User" ) {
-                  header("Location: Usuario/Eventos.php");
+                  header("Location: Usuario/eventos.php");
                 } elseif ($_SESSION["Rol"] == "Admin" ) {
                   header("Location: Admin/admin.php");
                       }

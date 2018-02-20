@@ -6,7 +6,6 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-    var_dump($_SESSION);
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -19,10 +18,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);} (document, 'script', 'facebook-jssdk'));</script>
     <?php
     //CREATING THE CONNECTION
       $connection = new mysqli("localhost", "root", "Admin2015", "granPoder",3316);
@@ -39,55 +43,57 @@
     <div class="container">
 
       <div class="row" id="social">
-        <div class="col-md-9" id="social1">
-          <span>Bienvenido a la web de la Hermandad Sacramental Ntro Padre</span>
+        <div class="col-md-10" id="social1">
+          <span>Bienvenido a la web de Nuestra Hermandad</span>
         </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>
+        </div>
       </div>
-      <div class="row header">
-        <div class="col-md-3">
-          <span>aaaaa</span>
-        </div>
-        <div class="col-md-6">
-          <h2>Hermandad Sacramental Nuestro Padre Jesús del Gran Poder<br>
-            Maria Santisima de los Dolores <br>
-             y Beato Antonio Martinez Gil</h2>
-        </div>
-        <div class="col-md-3">
-            <span>aaaaaaa</span>
-        </div>
+      <div class="row">
+        <nav class="col-md-12 navbar navbar-expand-xl bg-light navbar-light">
+        <!-- Brand/logo -->
+        <a class="col-md-1 navbar-brand" href="#">
+          <img src="escudo.jpg" alt="logo" style="width:40px;">
+        </a>
 
-      </div>
-      <div class="row" id="menu">
+        <!-- Links -->
+        <ul class="navbar-nav col-md-10">
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Articulos</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Eventos</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Bienes</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Área de Usuarios</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Archivos de interés</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Contacto</b></a>
+            </li>
+          </div>
 
-        <div class="col-md-2" id="selmenu">
-          <span><a href="index.php">Inicio</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="eventos.php">Eventos</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="articulos.php">Articulos</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="bienes.php">Bienes</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="../registro.php">Registro</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="area_usuario.php">Área de Usuarios</a></span>
-        </div>
 
-      </div>
+
+        </ul>
+      </nav>
 
       <div class="row" class="contenido">
         <div class="row col-md-9" id="contprincipal">
@@ -124,37 +130,22 @@
            ?>
 
 
-      </div>
-      <div class="col-md-3" id="banners">
-        <div class="col-md-12">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
-            t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
-            o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
-            idatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
         </div>
-        <div class="col-md-12">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
-            t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
-            o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
-            idatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class=" col-md-3">
 
+          <div class="fb-page col-md-12" data-href="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <blockquote cite="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/" class="fb-xfbml-parse-ignore">
+              <a href="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/"></a>
+            </blockquote>
+          </div>
+
+          <div class="col-md-12">
+          </div>
         </div>
-
-      </div>
       </div>
 
-      <div class="row" id="foot">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-           Excepteur sint occaecat cupidatat non proident,
-           sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="row col-md-12 text-center bg-light">
+        <p class="mx-auto">Copyright © Hermandad Sacramental Gran Poder Montellano 2018 Todos los derechos reservados.</p>
 
       </div>
 
