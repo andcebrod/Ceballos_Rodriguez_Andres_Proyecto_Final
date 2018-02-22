@@ -6,7 +6,7 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-    var_dump($_SESSION);
+
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -37,8 +37,11 @@
     <div class="container">
 
       <div class="row" id="social">
-        <div class="col-md-10" id="social1">
+        <div class="col-md-8" id="social1">
           <span>Bienvenido a la web de Nuestra Hermandad</span>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-primary" type="button" name="button"><a href="../admin.php">Panel principal</a></button>
         </div>
         <div class="col-md-2">
             <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>

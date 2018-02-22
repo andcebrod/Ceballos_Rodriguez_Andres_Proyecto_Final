@@ -84,6 +84,7 @@
       </div>
 
       <div class="row col-md-12" class="contenido">
+        
         <div class="col-md-9"  id="contprincipal">
             <h2>Registro de Usuario: </h2>
 

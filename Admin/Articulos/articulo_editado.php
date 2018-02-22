@@ -37,8 +37,11 @@
     ?>
     <div class="container">
       <div class="row" id="social">
-        <div class="col-md-10" id="social1">
+        <div class="col-md-8" id="social1">
           <span>Bienvenido a la web de Nuestra Hermandad</span>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-primary" type="button" name="button"><a href="../admin.php">Panel principal</a></button>
         </div>
         <div class="col-md-2">
             <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>
@@ -150,9 +153,9 @@
               Imagen = '$Imagen'
               WHERE CodArticulo = '$CodArticulo'";
 
-              echo $query;
+
               if ($result = $connection->query($query)) {
-                echo "<h1>Datos actualizados</h1>";
+                echo "<h2>Datos actualizados</h2>";
               } else {
                 echo "<h2>Error al actualizar los datos</h2>";
               }

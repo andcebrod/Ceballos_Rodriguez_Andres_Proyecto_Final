@@ -36,8 +36,11 @@
     <div class="container">
 
       <div class="row" id="social">
-        <div class="col-md-10" id="social1">
+        <div class="col-md-8" id="social1">
           <span>Bienvenido a la web de Nuestra Hermandad</span>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-primary" type="button" name="button"><a href="../admin.php">Panel principal</a></button>
         </div>
         <div class="col-md-2">
             <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>
@@ -143,11 +146,11 @@
             $query2 = "INSERT INTO Articulos (Titulo, Subtitulo, Cuerpo, Imagen, Fecha, CodUsuario)
             VALUES ('$Titulo','$Subtitulo','$Cuerpo','$Imagen','$Fecha', $CodUsuario )";
 
-            echo $query2;
+
 
             if ($result=$connection->query($query2)) {
 
-              echo "Ha sido subido";
+              echo "<h2>Ha sido subido</h2>";
             }  else {
               echo "Error al subir";
             }

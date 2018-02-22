@@ -6,7 +6,7 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-    var_dump($_SESSION);
+
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -18,7 +18,6 @@
   <head>
     <meta charset="utf-8">
 <link rel="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" href="../css/styles.css">
     <title>Gran Poder Montellano</title>
   </head>
   <body>
@@ -35,56 +34,61 @@
       }
     ?>
     <div class="container">
-
       <div class="row" id="social">
-        <div class="col-md-9" id="social1">
-          <span>Bienvenido a la web de la Hermandad Sacramental Ntro Padre</span>
+        <div class="col-md-8" id="social1">
+          <span>Bienvenido a la web de Nuestra Hermandad</span>
         </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
-        <div class="col-md-1">
-            <span>aa</span>
-          </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-primary" type="button" name="button"><a href="../admin.php">Panel principal</a></button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>
+        </div>
       </div>
-      <div class="row header">
-        <div class="col-md-3">
-          <span>aaaaa</span>
-        </div>
-        <div class="col-md-6">
-          <h2>Hermandad Sacramental Nuestro Padre Jesús del Gran Poder<br>
-            Maria Santisima de los Dolores <br>
-             y Beato Antonio Martinez Gil</h2>
-        </div>
-        <div class="col-md-3">
-            <span>aaaaaaa</span>
-        </div>
+      <div class="row">
+        <nav class="col-md-12 navbar navbar-expand-xl bg-light navbar-light">
+        <!-- Brand/logo -->
+        <a class="col-md-1 navbar-brand" href="#">
+          <img src="escudo.jpg" alt="logo" style="width:40px;">
+        </a>
 
-      </div>
-      <div class="row" id="menu">
-        <div class="col-md-2" id="selmenu">
-          <span><a href="../Usuario/index.php">Inicio</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="../Usuario/eventos.php">Eventos</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="../Usuario/articulos.php">Articulos</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="../Usuario/bienes.php">Bienes</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="../registro.php">Registro</a></span>
-        </div>
-        <div class="col-md-2" id="selmenu">
-          <span><a href="usuarios.php">Área de Usuarios</a></span>
-        </div>
+        <!-- Links -->
+        <ul class="navbar-nav col-md-10">
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Articulos</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Eventos</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Bienes</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Área de Usuarios</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Archivos de interés</b></a>
+            </li>
+          </div>
+          <div class="col-md-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>Contacto</b></a>
+            </li>
+          </div>
 
 
+
+        </ul>
+      </nav>
       </div>
 
       <div class="row" class="contenido">
@@ -104,40 +108,12 @@
            ?>
 
         </div>
-        <div class="col-md-3" id="banners">
-          <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
-              t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
-              o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
-              idatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          </div>
-          <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt u
-              t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
-              o laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup
-              idatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          </div>
-
-        </div>
 
       </div>
-
-      <div class="row" id="foot">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-           Excepteur sint occaecat cupidatat non proident,
-           sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="row col-md-12 text-center bg-light">
+        <p class="mx-auto">Copyright © Hermandad Sacramental Gran Poder Montellano 2018 Todos los derechos reservados.</p>
 
       </div>
-
 
 
     </div>
