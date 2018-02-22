@@ -44,11 +44,11 @@
     <div class="container">
 
       <div class="row" id="social">
-        <div class="col-md-10" id="social1">
+        <div class="col-md-8" id="social1">
           <span>Bienvenido a la web de Nuestra Hermandad</span>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>
+            <button class="btn btn-outline-danger" type="button" name="button"><a href="cerrar_sesion.php">Cerrar Sesión</a></button>
         </div>
       </div>
       <div class="row">
