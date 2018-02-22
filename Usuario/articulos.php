@@ -81,12 +81,12 @@
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Archivos de interés</b></a>
+              <a class="nav-link" href="archivos.php"><b>Archivos de interés</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Contacto</b></a>
+              <a class="nav-link" href="contacto.php"><b>Contacto</b></a>
             </li>
           </div>
 

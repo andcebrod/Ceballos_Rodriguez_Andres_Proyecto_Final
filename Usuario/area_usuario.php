@@ -6,7 +6,6 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-    var_dump($_SESSION);
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -86,72 +85,7 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-              <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2" >
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12" id="cont2">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="col-md-12">
-              <img src="ola.png" >
-            </div>
-            <div class="col-md-12">
-                <p><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam.</p>
-            </div>
-          </div>
+
         </div>
         <div class=" col-md-3">
 

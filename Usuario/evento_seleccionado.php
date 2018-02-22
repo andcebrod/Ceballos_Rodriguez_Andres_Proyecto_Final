@@ -62,39 +62,38 @@
         <ul class="navbar-nav col-md-10">
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Articulos</b></a>
+              <a class="nav-link" href="articulos.php"><b>Articulos</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Eventos</b></a>
+              <a class="nav-link" href="eventos.php"><b>Eventos</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Bienes</b></a>
+              <a class="nav-link" href="bienes.php"><b>Bienes</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Área de Usuarios</b></a>
+              <a class="nav-link" href="area_usuario.php"><b>Área de Usuarios</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Archivos de interés</b></a>
+              <a class="nav-link" href="archivos.php"><b>Archivos de interés</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Contacto</b></a>
+              <a class="nav-link" href="contacto.php"><b>Contacto</b></a>
             </li>
           </div>
 
 
 
         </ul>
-      </nav>
       </div>
 
       <div class="row" class="contenido">
