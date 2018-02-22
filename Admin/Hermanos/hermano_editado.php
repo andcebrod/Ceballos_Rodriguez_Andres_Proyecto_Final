@@ -45,7 +45,7 @@
             <button class="btn btn-outline-primary" type="button" name="button"><a href="../admin.php">Panel principal</a></button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-outline-danger" type="button" name="button"><a href="">Cerrar Sesión</a></button>
+            <button class="btn btn-outline-danger" type="button" name="button"><a href="../cerrar_sesion.php">Cerrar Sesión</a></button>
         </div>
       </div>
       <div class="row">
@@ -59,37 +59,34 @@
         <ul class="navbar-nav col-md-10">
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Articulos</b></a>
+              <a class="nav-link" href="../../Usuario/articulos.php"><b>Articulos</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Eventos</b></a>
+              <a class="nav-link" href="../../Usuario/eventos.php"><b>Eventos</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Bienes</b></a>
+              <a class="nav-link" href="../../Usuario/bienes.php"><b>Bienes</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Área de Usuarios</b></a>
+              <a class="nav-link" href="../../Usuario/area_usuario.php"><b>Área de Usuario</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Archivos de interés</b></a>
+              <a class="nav-link" href="../../Usuario/archivos.php"><b>Archivos de interés</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Contacto</b></a>
+              <a class="nav-link" href="../../Usuario/contacto.php"><b>Contacto</b></a>
             </li>
           </div>
-
-
-
         </ul>
       </nav>
       </div>

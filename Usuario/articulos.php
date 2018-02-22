@@ -61,22 +61,22 @@
         <ul class="navbar-nav col-md-10">
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Articulos</b></a>
+              <a class="nav-link" href="articulos.php"><b>Articulos</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Eventos</b></a>
+              <a class="nav-link" href="eventos.php"><b>Eventos</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Bienes</b></a>
+              <a class="nav-link" href="bienes.php"><b>Bienes</b></a>
             </li>
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Área de Usuarios</b></a>
+              <a class="nav-link" href="area_usuario.php"><b>Área de Usuarios</b></a>
             </li>
           </div>
           <div class="col-md-2">
