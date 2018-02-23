@@ -94,7 +94,7 @@
 
         </ul>
       </nav>
-
+    </div>
       <div class="row" class="contenido">
         <div class="row col-md-9" id="contprincipal">
 
