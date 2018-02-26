@@ -35,6 +35,7 @@
           <input type="password" class="form-control" placeholder="Contraseña" required="" name="Pass">
           </div>
       <button class="btn btn-lg btn-primary btn-block" name="enviar" type="submit">Entrar</button>
+      <p><a class="link" href="registro.php"><b>Regístrate gratis</b></a></p>
       <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
         </form>
 

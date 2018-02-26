@@ -74,11 +74,7 @@
               <a class="nav-link" href="../../Usuario/bienes.php"><b>Bienes</b></a>
             </li>
           </div>
-          <div class="col-md-2">
-            <li class="nav-item">
-              <a class="nav-link" href="../../Usuario/area_usuario.php"><b>Área de Usuario</b></a>
-            </li>
-          </div>
+
           <div class="col-md-2">
             <li class="nav-item">
               <a class="nav-link" href="../../Usuario/archivos.php"><b>Archivos de interés</b></a>

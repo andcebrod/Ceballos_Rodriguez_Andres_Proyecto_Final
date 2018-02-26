@@ -63,11 +63,6 @@
           </div>
           <div class="col-md-2">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Área de Usuarios</b></a>
-            </li>
-          </div>
-          <div class="col-md-2">
-            <li class="nav-item">
               <a class="nav-link" href="#"><b>Archivos de interés</b></a>
             </li>
           </div>
@@ -84,7 +79,7 @@
       </div>
 
       <div class="row col-md-12" class="contenido">
-        
+
         <div class="col-md-9"  id="contprincipal">
             <h2>Registro de Usuario: </h2>
 

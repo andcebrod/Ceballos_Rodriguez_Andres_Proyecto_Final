@@ -74,11 +74,7 @@
               <a class="nav-link" href="bienes.php"><b>Bienes</b></a>
             </li>
           </div>
-          <div class="col-md-2">
-            <li class="nav-item">
-              <a class="nav-link" href="area_usuario.php"><b>Área de Usuarios</b></a>
-            </li>
-          </div>
+
           <div class="col-md-2">
             <li class="nav-item">
               <a class="nav-link" href="archivos.php"><b>Archivos de interés</b></a>
@@ -105,11 +101,11 @@
 
           if ($result = $connection->query($query2)) {
 
-          echo "<div class='list-group'>"
+          echo "<div class='list-group'>";
           while($obj = $result->fetch_object()) {
             echo "<a href='".$obj->Ubicacion."' class='list-group-item list-group-item-action'>".$obj->Nombre."</a>";
             }
-            echo  "</div>"
+            echo  "</div>";
           }
 
            ?>
