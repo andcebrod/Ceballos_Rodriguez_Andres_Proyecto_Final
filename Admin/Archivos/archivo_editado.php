@@ -6,7 +6,7 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-
+  
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -94,38 +94,23 @@
       <div class="row" class="contenido">
         <div class="col-md-12" id="contprincipal">
 
-          <?php if (!isset($_POST["CodArticulo"])) :?>
+          <?php if (!isset($_POST["id"])) :?>
 
             <form method="post">
               <div class="form-group">
-                <label for="Titulo">Titulo: </label>
-                <input type="text" class="form-control" name="Titulo" value="<?php echo $_GET['Titulo']; ?>">
+                <label for="Nombre">Nombre: </label>
+                <input type="text" class="form-control" name="Nombre" value="<?php echo $_GET['Nombre']; ?>">
               </div>
               <div class="form-group">
-                <label for="Subtitulo">Subtitulo: </label>
-                <input type="text" class="form-control" name="Subtitulo" value="<?php echo $_GET['Subtitulo']; ?>">
+                <label for="Ubicacion">Ubicacion: </label>
+                <input type="text" class="form-control" name="Ubicacion" value="<?php echo $_GET['Ubicacion']; ?>">
               </div>
               <div class="form-group">
-                <input type="hidden" class="form-control" name="CodArticulo" value="<?php echo $_GET['CodArticulo']; ?>">
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" name="CodUsuario" value="<?php echo $_GET['CodUsuario']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Fecha">Fecha: </label>
-                <input type="date" class="form-control" name="Fecha" value="<?php echo $_GET['Fecha']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Cuerpo">Cuerpo: </label>
-                <input type="text" class="form-control" name="Cuerpo" value="<?php echo $_GET['Cuerpo']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Imagen">Imagen: </label>
-                <input type="text" class="form-control" name="Imagen" value="<?php echo $_GET['Imagen']; ?>">
+                <input type="hidden" class="form-control" name="id" value="<?php echo $_GET['id']; ?>">
               </div>
 
               <div class="form-group">
-                <input class="btn btn-default" type="submit" name="enviar" value="Editar Articulo">
+                <input class="btn btn-default" type="submit" name="enviar" value="Editar Archivo">
               </div>
             </form>
 
@@ -133,22 +118,12 @@
 
               <?php
 
-              $Titulo = $_POST["Titulo"];
-              $Subtitulo = $_POST["Subtitulo"];
-              $Cuerpo = $_POST["Cuerpo"];
-              $Imagen = $_POST["Imagen"];
+              $Nombre = $_POST["Nombre"];
+              $Ubicacion = $_POST["Ubicacion"];
               $Fecha = $_POST["Fecha"];
-              $CodArticulo = $_POST["CodArticulo"];
-              $CodUsuario = $_POST["CodUsuario"];
+              $id = $_POST["id"];
 
-              $query= "UPDATE Articulos SET Titulo='$Titulo', Subtitulo='$Subtitulo',
-              CodArticulo='$CodArticulo',
-              Fecha = '$Fecha',
-              Cuerpo='$Cuerpo',
-              CodUsuario='$CodUsuario',
-              Imagen = '$Imagen'
-              WHERE CodArticulo = '$CodArticulo'";
-
+              $query= "UPDATE Archivos SET Nombre='$Nombre', Ubicacion='$Ubicacion' WHERE id = '$id'";
 
               if ($result = $connection->query($query)) {
                 echo "<h2>Datos actualizados</h2>";

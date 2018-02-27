@@ -129,6 +129,14 @@
                   <a href="Bienes/eliminar_bienes.php"><img src="Images/delete.png" height="22px" width="22px"></a>
                 </td>
               </tr>
+              <tr>
+                <td><span>Archivos</span></td>
+                <td>
+                  <a href="Archivos/anadir_archivos.php"><img src="Images/plus.png" height="22px" width="22px"></a>
+                  <a href="Archivos/editar_archivos.php"><img src="Images/lapiz.png" height="22px" width="22px"></a>
+                  <a href="Archivos/eliminar_archivos.php"><img src="Images/delete.png" height="22px" width="22px"></a>
+                </td>
+              </tr>
 
 
             </tbody>

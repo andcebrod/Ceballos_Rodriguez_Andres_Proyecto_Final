@@ -6,7 +6,6 @@
   if (isset($_SESSION["Rol"])) {
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
-
   } else {
     session_destroy();
     header("Location: ../inicio_sesion.php");
@@ -19,7 +18,6 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/bootstrap.css">
-
     <title>Gran Poder Montellano</title>
   </head>
   <body>
@@ -36,6 +34,7 @@
       }
     ?>
     <div class="container">
+
       <div class="row" id="social">
         <div class="col-md-8" id="social1">
           <span>Bienvenido a la web de Nuestra Hermandad</span>
@@ -87,82 +86,48 @@
 
         </ul>
       </nav>
-      </div>
-
-
+    </div>
 
       <div class="row" class="contenido">
-        <div class="col-md-12" id="contprincipal">
-
-          <?php if (!isset($_POST["CodArticulo"])) :?>
+        <div class="col-md-12"  id="contprincipal">
+          <?php if (!isset($_POST["id"])) :?>
 
             <form method="post">
               <div class="form-group">
-                <label for="Titulo">Titulo: </label>
-                <input type="text" class="form-control" name="Titulo" value="<?php echo $_GET['Titulo']; ?>">
+                <label for="Nombre">Nombre: </label>
+                <input type="text" class="form-control" name="Nombre" placeholder="Introduce Nombre del archivo">
               </div>
               <div class="form-group">
-                <label for="Subtitulo">Subtitulo: </label>
-                <input type="text" class="form-control" name="Subtitulo" value="<?php echo $_GET['Subtitulo']; ?>">
+                <label for="Ubicación">Ubicacion: </label>
+                <input type="text" class="form-control" name="Ubicación" placeholder="Introduce Ubicación del archivo">
               </div>
               <div class="form-group">
-                <input type="hidden" class="form-control" name="CodArticulo" value="<?php echo $_GET['CodArticulo']; ?>">
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" name="CodUsuario" value="<?php echo $_GET['CodUsuario']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Fecha">Fecha: </label>
-                <input type="date" class="form-control" name="Fecha" value="<?php echo $_GET['Fecha']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Cuerpo">Cuerpo: </label>
-                <input type="text" class="form-control" name="Cuerpo" value="<?php echo $_GET['Cuerpo']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Imagen">Imagen: </label>
-                <input type="text" class="form-control" name="Imagen" value="<?php echo $_GET['Imagen']; ?>">
+                <input type="submit" class="btn btn-default" name="Enviar" value="Publicar archivo">
               </div>
 
-              <div class="form-group">
-                <input class="btn btn-default" type="submit" name="enviar" value="Editar Articulo">
-              </div>
-            </form>
+          <?php else: ?>
+          <?php
 
-            <?php else: ?>
-
-              <?php
-
-              $Titulo = $_POST["Titulo"];
-              $Subtitulo = $_POST["Subtitulo"];
-              $Cuerpo = $_POST["Cuerpo"];
-              $Imagen = $_POST["Imagen"];
-              $Fecha = $_POST["Fecha"];
-              $CodArticulo = $_POST["CodArticulo"];
-              $CodUsuario = $_POST["CodUsuario"];
-
-              $query= "UPDATE Articulos SET Titulo='$Titulo', Subtitulo='$Subtitulo',
-              CodArticulo='$CodArticulo',
-              Fecha = '$Fecha',
-              Cuerpo='$Cuerpo',
-              CodUsuario='$CodUsuario',
-              Imagen = '$Imagen'
-              WHERE CodArticulo = '$CodArticulo'";
+          $Nombre = $_POST["Nombre"];
+          $Ubicacion= $_POST["Ubicacion"];
 
 
-              if ($result = $connection->query($query)) {
-                echo "<h2>Datos actualizados</h2>";
-              } else {
-                echo "<h2>Error al actualizar los datos</h2>";
-              }
-               ?>
+            $query2 = "INSERT INTO Archivos (Nombre, Ubicacion VALUES ('$Nombre','$Ubicacion')";
+
+            if ($result=$connection->query($query2)) {
+
+              echo "<h2>Ha sido subido</h2>";
+            }  else {
+              echo "Error al subir";
+            }
 
 
-            <?php endif ?>
-
+          ?>
+          <?php endif ?>
 
 
         </div>
+
 
       </div>
 

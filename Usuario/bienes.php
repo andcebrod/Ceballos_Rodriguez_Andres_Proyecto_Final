@@ -84,14 +84,11 @@
               <a class="nav-link" href="contacto.php"><b>Contacto</b></a>
             </li>
           </div>
-
-
-
         </ul>
       </nav>
-    </div>
+      </div>
       <div class="row" class="contenido">
-        <div class="row col-md-9" id="contprincipal">
+        <div class="col-md-9" id="contprincipal">
 
           <?php
 
@@ -125,14 +122,10 @@
            ?>
         </div>
         <div class=" col-md-3">
-
           <div class="fb-page col-md-12" data-href="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
             <blockquote cite="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/" class="fb-xfbml-parse-ignore">
               <a href="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/"></a>
             </blockquote>
-          </div>
-
-          <div class="col-md-12">
           </div>
         </div>
 

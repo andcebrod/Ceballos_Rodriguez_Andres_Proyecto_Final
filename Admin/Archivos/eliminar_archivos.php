@@ -18,7 +18,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
 
     <title>Gran Poder Montellano</title>
   </head>
@@ -36,6 +36,7 @@
       }
     ?>
     <div class="container">
+
       <div class="row" id="social">
         <div class="col-md-8" id="social1">
           <span>Bienvenido a la web de Nuestra Hermandad</span>
@@ -89,87 +90,52 @@
       </nav>
       </div>
 
-
-
       <div class="row" class="contenido">
-        <div class="col-md-12" id="contprincipal">
-
-          <?php if (!isset($_POST["CodArticulo"])) :?>
-
-            <form method="post">
-              <div class="form-group">
-                <label for="Titulo">Titulo: </label>
-                <input type="text" class="form-control" name="Titulo" value="<?php echo $_GET['Titulo']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Subtitulo">Subtitulo: </label>
-                <input type="text" class="form-control" name="Subtitulo" value="<?php echo $_GET['Subtitulo']; ?>">
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" name="CodArticulo" value="<?php echo $_GET['CodArticulo']; ?>">
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" name="CodUsuario" value="<?php echo $_GET['CodUsuario']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Fecha">Fecha: </label>
-                <input type="date" class="form-control" name="Fecha" value="<?php echo $_GET['Fecha']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Cuerpo">Cuerpo: </label>
-                <input type="text" class="form-control" name="Cuerpo" value="<?php echo $_GET['Cuerpo']; ?>">
-              </div>
-              <div class="form-group">
-                <label for="Imagen">Imagen: </label>
-                <input type="text" class="form-control" name="Imagen" value="<?php echo $_GET['Imagen']; ?>">
-              </div>
-
-              <div class="form-group">
-                <input class="btn btn-default" type="submit" name="enviar" value="Editar Articulo">
-              </div>
-            </form>
-
-            <?php else: ?>
-
-              <?php
-
-              $Titulo = $_POST["Titulo"];
-              $Subtitulo = $_POST["Subtitulo"];
-              $Cuerpo = $_POST["Cuerpo"];
-              $Imagen = $_POST["Imagen"];
-              $Fecha = $_POST["Fecha"];
-              $CodArticulo = $_POST["CodArticulo"];
-              $CodUsuario = $_POST["CodUsuario"];
-
-              $query= "UPDATE Articulos SET Titulo='$Titulo', Subtitulo='$Subtitulo',
-              CodArticulo='$CodArticulo',
-              Fecha = '$Fecha',
-              Cuerpo='$Cuerpo',
-              CodUsuario='$CodUsuario',
-              Imagen = '$Imagen'
-              WHERE CodArticulo = '$CodArticulo'";
+        <div class="col-md-12"  id="contprincipal">
 
 
-              if ($result = $connection->query($query)) {
-                echo "<h2>Datos actualizados</h2>";
-              } else {
-                echo "<h2>Error al actualizar los datos</h2>";
-              }
-               ?>
+          <?php
 
 
-            <?php endif ?>
+        $query2 ="SELECT * FROM Archivos";
+
+        if ($result = $connection->query($query2)) {
+
+          echo "<table class='table table-striped'>";
+          while($obj = $result->fetch_object()) {
+
+            $Nombre = $obj->Nombre;
+            $Ubicacion = $obj->Ubicacion;
+            $id = $obj->id;
 
 
+            echo "<tr>";
+            echo "<td>".$obj->id."</td>";
+            echo "<td>".$obj->Nombre."</td>";
+            echo "<td>".$obj->Ubicacion."</td>";
+            echo "<td><a href='archivo_eliminado.php?Nombre=".$Nombre.
+            "&Ubicacion=".$Ubicacion.
+            "&id=".$id."'>
+            <img src='../Images/lapiz.png' height='22px' width='22px'></a></td>";
+            echo "</tr>";
+            }
+            echo "</table>";
+          }
+
+
+
+
+
+           ?>
 
         </div>
-
       </div>
 
       <div class="row col-md-12 text-center bg-light">
         <p class="mx-auto">Copyright © Hermandad Sacramental Gran Poder Montellano 2018 Todos los derechos reservados.</p>
 
       </div>
+
 
 
 
