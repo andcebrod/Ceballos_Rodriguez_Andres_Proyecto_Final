@@ -107,7 +107,7 @@
               </div>
               <div class="form-group">
                 <label for="Imagen">Imagen: </label>
-                <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de la Imagen">
+                <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de la Imagen" value="ImgArt/defecto.png">
               </div>
               <div class="form-group">
                 <label for="fecha">Introduce fecha: </label>

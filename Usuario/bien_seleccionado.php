@@ -91,6 +91,7 @@
 
         </ul>
       </nav>
+      </div>
 
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
@@ -113,7 +114,7 @@
               $CodBien = $obj->CodBien;
               $Descripcion = $obj->Descripcion;
 
-              echo "<img class='rounded' src=".$Imagen.">";
+              echo "<img class='rounded img-fluid' src=".$Imagen.">";
               echo "<h1>$Nombre</h1>";
               echo "<ul class='list-group'>";
               echo "<li class='list-group-item'>Autor: ".$Autor."</li>";

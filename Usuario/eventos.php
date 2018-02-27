@@ -116,10 +116,10 @@
 
               echo "<div class='col-md-6' >";
               echo "  <div class='col-md-12'>";
-              echo "  <img class='rounded' src=".$Imagen.">";
+              echo "  <img class='rounded img-fluid' src=".$Imagen.">";
               echo "  </div>";
               echo "<div class='col-md-12' id='cont2'>";
-              echo "<p><h2><a href='evento_seleccionado.php?CodEvento=".$CodEvento."'>".$Titulo."</a></h2></p>";
+              echo "<p><h4><a href='evento_seleccionado.php?CodEvento=".$CodEvento."'>".$Titulo."</a></h4></p>";
               echo "<p>$Subtitulo</p>";
               echo "</div>";
               echo "</div>";

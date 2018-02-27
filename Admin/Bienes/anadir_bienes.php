@@ -117,7 +117,7 @@
               <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de Imagen">
             </div>
             <div class="form-group">
-              <input class="btn btn-default" type="submit" name="enviar" value="Añadir Usuario">
+              <input class="btn btn-default" type="submit" name="enviar" value="Añadir Bien">
             </div>
           </form>
 

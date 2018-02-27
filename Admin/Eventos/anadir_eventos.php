@@ -71,7 +71,7 @@
               <a class="nav-link" href="../../Usuario/bienes.php"><b>Bienes</b></a>
             </li>
           </div>
-    
+
           <div class="col-md-2">
             <li class="nav-item">
               <a class="nav-link" href="../../Usuario/archivos.php"><b>Archivos de interés</b></a>
@@ -107,7 +107,7 @@
               </div>
               <div class="form-group">
                 <label for="Imagen">Imagen: </label>
-                <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de la Imagen">
+                <input type="text" class="form-control" name="Imagen" placeholder="Introduce Ruta de la Imagen" value="ImgArt/defecto.png">
               </div>
               <div class="form-group">
                 <label for="fecha">Introduce fecha: </label>

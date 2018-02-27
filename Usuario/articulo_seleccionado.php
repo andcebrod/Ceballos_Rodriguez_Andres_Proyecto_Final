@@ -111,7 +111,7 @@
               $Imagen = $obj->Imagen;
               $Fecha = $obj->Fecha;
 
-              echo "<img class='rounded' src=".$Imagen.">";
+              echo "<img class='rounded img-fluid' src=".$Imagen.">";
               echo "<h1>$Titulo</h1>";
               echo "<h2>$Subtitulo</h2>";
               echo "<p>$Cuerpo</p>";

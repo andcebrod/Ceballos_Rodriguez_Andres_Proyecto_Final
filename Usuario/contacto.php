@@ -98,7 +98,7 @@
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action"> <img src="ImgVarias/email.png" height="16px" width="22px"> Correo electrónico: granpodermontellano@gmail.com</a>
             <a href="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/" class="list-group-item list-group-item-action"><img src="ImgVarias/facebook.png" height="22px" width="22px"> Facebook: Hermandad Sacramental del Gran Poder - Montellano</a>
-            <a href="#" class="list-group-item list-group-item-action"><img src="ImgVarias/whatsapp.png" height="22px" width="22px"> Whatsapp: 600000000</a>
+            <a href="#" class="list-group-item list-group-item-action"><img src="ImgVarias/whatsapp.png" height="22px" width="22px"> Whatsapp: 688 25 62 03</a>
             <a href="https://www.google.es/maps/place/Hermandad+Sacramental+del+Gran+Poder/@36.9950029,-5.5712184,19z/data=!4m5!3m4!1s0xd0d70078c5cc40f:0x3410a5207bdf67c0!8m2!3d36.9951168!4d-5.5707845" class="list-group-item list-group-item-action"> <img src="ImgVarias/direccion.png" height="22px" width="22px"> Dirección: Calle Mesones, 1, 41770 Montellano, Sevilla</a>
           </div>
 

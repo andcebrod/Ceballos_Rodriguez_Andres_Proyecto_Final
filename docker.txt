@@ -1,0 +1,22 @@
+//  //
+docker stop lamp
+docker commit lamp proyecto
+docker save proyecto
+
+// Docker File //
+Hace unas ordenes para generar una imagen nueva.
+FROM -> Donde tu le dices que imagen de referencia vas a utilizar (En nuestro caso iestriana/lamp)
+RUN -> Te permite ejecutar lo que tu quieras en el docker  
+------
+
+------
+
+FROM iestriana/lamp
+RUN apt-get -y install git
+RUN cd /var/www/html
+RUN git clone https://github.com/andcebrod/Ceballos_Rodriguez_Andres_Proyecto_Final
+RUN mv Ceballos_Rodriguez_Andres_Proyecto_Final/* .
+RUN rm -r REPO
+ADD backup.sql /tmp
+RUN mysql -u root -p Admin2015 granPoder</tmp/backup.sql
+CMD /usr/bin/startservices.sh
