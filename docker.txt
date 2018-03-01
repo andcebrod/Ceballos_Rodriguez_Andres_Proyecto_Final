@@ -6,7 +6,7 @@ docker save proyecto
 // Docker File //
 Hace unas ordenes para generar una imagen nueva.
 FROM -> Donde tu le dices que imagen de referencia vas a utilizar (En nuestro caso iestriana/lamp)
-RUN -> Te permite ejecutar lo que tu quieras en el docker  
+RUN -> Te permite ejecutar lo que tu quieras en el docker
 ------
 
 ------

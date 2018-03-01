@@ -94,6 +94,7 @@
 
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
+          <div class="row">
 
           <?php
 
@@ -126,7 +127,7 @@
           }
            ?>
 
-
+         </div>
         </div>
         <div class=" col-md-3">
 

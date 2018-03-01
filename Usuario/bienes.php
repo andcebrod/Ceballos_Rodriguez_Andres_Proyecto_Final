@@ -89,6 +89,9 @@
       </div>
       <div class="row" class="contenido">
         <div class="col-md-9" id="contprincipal">
+          <div class="row">
+
+
 
           <?php
 
@@ -120,6 +123,7 @@
             }
           }
            ?>
+         </div>
         </div>
         <div class=" col-md-3">
           <div class="fb-page col-md-12" data-href="https://www.facebook.com/Hermandad-Sacramental-del-Gran-Poder-Montellano-1850947275184958/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
